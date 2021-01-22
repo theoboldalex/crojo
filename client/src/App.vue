@@ -28,7 +28,9 @@ export default {
     ...mapGetters(['getProducts', 'getCart']),
   },
   async mounted() {
-    const { data } = await axios.get('/api/v1/products')
+    const { data } = await axios.get(
+      'https://enigmatic-stream-69683.herokuapp.com/api/v1/products'
+    )
     await this.$store.dispatch('setProducts', data)
   },
   methods: {
