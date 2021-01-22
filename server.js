@@ -8,11 +8,6 @@ dotenv.config()
 connectDB()
 app.use(express.json({ extended: false }))
 
-//API_TEST_ENDPOINT//
-app.get('/', (req, res) => {
-  res.json('Welcome to the Crojo API')
-})
-
 //ROUTES//
 app.use('/api/v1/products', require('./routes/productRoutes.js'))
 
