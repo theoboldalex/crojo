@@ -2,11 +2,13 @@ const express = require('express')
 const app = express()
 const dotenv = require('dotenv')
 const connectDB = require('./config/db.js')
+const serveStatic = require('serve-static')
 
 //CONFIG//
 dotenv.config()
 connectDB()
 app.use(express.json({ extended: false }))
+app.use(serveStatic(__dirname + '/client/dist'))
 
 //ROUTES//
 app.use('/api/v1/products', require('./routes/productRoutes.js'))
