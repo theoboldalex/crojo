@@ -31,7 +31,7 @@
                 <label for="phone">Contact Number:</label>
                 <input
                   type="text"
-                  v-model="customer.email"
+                  v-model="customer.phone"
                   class="form-control"
                 />
               </div>
@@ -66,6 +66,7 @@
         </form>
         <hr />
         <h4>Payment Details</h4>
+        <payment />
       </div>
       <div class="col-md-4">
         <h4>Order Summary</h4>
@@ -79,7 +80,7 @@
           <hr />
         </div>
         <h5><strong>Total: </strong>£{{ formatPrice(calculateTotal) }}</h5>
-        <button class="btn btn-dark mt-2">Checkout and Pay</button>
+        <!-- <button class="btn btn-dark mt-2">Checkout and Pay</button> -->
       </div>
     </div>
   </div>
@@ -87,8 +88,12 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import Payment from '../layout/Payment.vue'
 
 export default {
+  components: {
+    Payment,
+  },
   data() {
     return {
       customer: {},

@@ -12,6 +12,7 @@ app.use(serveStatic(__dirname + '/client/dist'))
 
 //ROUTES//
 app.use('/api/v1/products', require('./routes/productRoutes.js'))
+app.use('/api/v1/orders', require('./routes/orderRoutes'))
 
 //SERVER//
 const PORT = process.env.PORT || 5000
